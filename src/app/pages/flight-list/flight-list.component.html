@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Flight List</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Airline</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Available Seats</th>
+          <th>Price ($)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.id }}</td>
+          <td>{{ flight.airline }}</td>
+          <td>{{ flight.departure }}</td>
+          <td>{{ flight.destination }}</td>
+          <td>{{ flight.departureTime }}</td>
+          <td>{{ flight.arrivalTime }}</td>
+          <td>{{ flight.availableSeats }}</td>
+          <td>{{ flight.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
