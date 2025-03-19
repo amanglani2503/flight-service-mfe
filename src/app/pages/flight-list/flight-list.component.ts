@@ -21,6 +21,7 @@ interface Flight {
 })
 export class FlightListComponent implements OnInit {
   flights: Flight[] = [];
+  displayedFlights: Flight[] = [];
 
   // constructor(private flightService: FlightService) {}
 
@@ -35,4 +36,25 @@ export class FlightListComponent implements OnInit {
   //     console.error('Error fetching flights', error);
   //   });
   // }
+
+  filterByAvailability() {
+    this.displayedFlights = this.flights.filter(flight => flight.availableSeats > 0);
+  }
+
+  resetFilter() {
+    this.displayedFlights = [...this.flights]; // Reset to original list
+  }
+
+  editFlight(flightId: number) {
+    console.log('Edit flight with ID:', flightId);
+    // Navigate to edit flight page or open a modal for editing
+  }
+  
+  deleteFlight(flightId: number) {
+    if (confirm('Are you sure you want to delete this flight?')) {
+      console.log('Deleted flight with ID:', flightId);
+      // Call the backend API to delete the flight
+    }
+  }
+  
 }
